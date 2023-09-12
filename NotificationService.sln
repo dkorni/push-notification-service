@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "Noti
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{96BF0D93-B45F-4A3B-B106-10E42322AE3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService.Component.Tests", "NotificationService.Component.Tests\NotificationService.Component.Tests.csproj", "{80BE0440-AD0D-406F-8024-75931C5670C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +16,9 @@ Global
 		{5D257C65-DE7B-46A1-B1E1-0EE405E1A774}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D257C65-DE7B-46A1-B1E1-0EE405E1A774}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D257C65-DE7B-46A1-B1E1-0EE405E1A774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80BE0440-AD0D-406F-8024-75931C5670C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80BE0440-AD0D-406F-8024-75931C5670C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80BE0440-AD0D-406F-8024-75931C5670C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80BE0440-AD0D-406F-8024-75931C5670C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

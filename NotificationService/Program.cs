@@ -6,6 +6,7 @@ using Quartz;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScheduler();
+builder.Services.AddFirebase(builder.Configuration);
 builder.Services.AddSingleton<INotifierService, NotifierService>();
 var app = builder.Build();
 
