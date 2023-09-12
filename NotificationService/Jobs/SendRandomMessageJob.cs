@@ -46,7 +46,7 @@ public class SendRandomMessageJob : IJob
         string messageTitle = "Cake crafting challenge";
         string topic = "all";
 
-        // Send a message to the device corresponding to the provided
+        // Send a message to the device corresponding to the provided   
         // registration token.
         await _notifierService.Send(messageTitle, randomMessage, topic);
     }

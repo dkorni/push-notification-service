@@ -6,10 +6,12 @@ namespace NotificationService.Services;
 public class NotifierService : INotifierService
 {
     private readonly ISchedulerService _scheduler;
+    private readonly IConfiguration _configuration;
 
-    public NotifierService(ISchedulerService scheduler)
+    public NotifierService(ISchedulerService scheduler, IConfiguration configuration)
     {
         _scheduler = scheduler;
+        _configuration = configuration;
     }
     
     public async Task Start()
@@ -22,13 +24,23 @@ public class NotifierService : INotifierService
         IJobDetail job = JobBuilder.Create<SendRandomMessageJob>()
             .WithIdentity(jobName, group)
             .Build();
+
+        var intervalStr = _configuration["IntervalInMinutes"];
+
+        if (intervalStr == null)
+            throw new InvalidOperationException("Configuration doesn't contain 'IntervalInMinutes'");
+
+        if (!int.TryParse(intervalStr, out int interval))
+        {
+            throw new InvalidCastException("'IntervalInMinutes' parameter has invalid value");
+        }
         
         // Trigger the job to run now, and then repeat every 10 seconds
         ITrigger trigger = TriggerBuilder.Create()
             .WithIdentity(triggerName, group)
             .StartNow()
             .WithSimpleSchedule(x => x
-                .WithIntervalInMinutes(5)
+                .WithIntervalInMinutes(interval)
                 .RepeatForever())
             .Build();
 

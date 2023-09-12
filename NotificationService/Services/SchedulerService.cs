@@ -9,10 +9,16 @@ public class SchedulerService : ISchedulerService
 {
     private IScheduler _scheduler;
     
-    public SchedulerService(IJobFactory jobFactory)
+    public SchedulerService(IJobFactory jobFactory, IConfiguration configuration)
     {
         // you can have base properties
         var properties = new NameValueCollection();
+
+        var name = "mysql";
+        var connectionString = configuration.GetConnectionString(name);
+        
+        if (connectionString == null)
+            throw new InvalidOperationException($"Configuration doesn't contain connection string with name '{name}'");
         
         // and override values via builder
         var builder = SchedulerBuilder.Create(properties)
@@ -28,7 +34,7 @@ public class SchedulerService : ISchedulerService
                 x.UseProperties = true;
                 x.UseClustering();
                 // there are other SQL providers supported too 
-                x.UseMySql("server=db;uid=root;pwd=example;database=mysql");
+                x.UseMySql(connectionString);
                 // this requires Quartz.Serialization.Json NuGet package
                 x.UseJsonSerializer();
             });
