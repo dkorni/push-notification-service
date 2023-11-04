@@ -1,0 +1,24 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.1"
+services:
+  notificationservice:
+    build:
+      context: "/Users/deniskornienko/Desktop/Dotnet Projects/NotificationService/NotificationService"
+      dockerfile: "Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/NotificationService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/Users/deniskornienko/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/Users/deniskornienko/.nuget/packages"
+    image: "denisk2000/notification:dev"
+    ports: []
+    volumes:
+    - "/Users/deniskornienko/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/NotificationService/NotificationService:/app:rw"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/NotificationService:/src:rw"
+    working_dir: "/app"
