@@ -17,25 +17,27 @@ public class SendRandomMessageJob : IJob
     
     private static string[] messages = new[]
     {
-        "Let's make new cakes 🍰!",
+        "The cake is about to get cold, get your batch 🍰",
 
-        "🎂 New cakes are waiting for you!",
+        "... dear diary, there are no words to express how many new orders we have and how little time we have in the game...✍",
 
-        "Start playing and make the most delicious cake 🥮!",
+        "What are we waiting for? We've accumulated enough ingredients, it's time to do the deed! 👨🏼‍🍳",
 
-        "Visitors are waiting for your cakes 🍽🍰!",
+        "We urgently need your help or we're going to lose this order! ",
 
         "Complete quests and get rewards 🏆!",
 
-        "How about making a new pie 🍰?",
+        "Hurry up and collect all the stars while they're still in stock ⭐️⭐️⭐️",
 
-        "⭐️ Play and open the star chest 🔑!",
+        "⭐️ There are so many cakes, we can't do it without you 🧑‍🍳👩🏻‍🍳👨🏾‍🍳!",
 
-        "You have new orders 🍰🍰🍰! Let's make cakes!",
+        "It's time to remind myself, I'm the \"Cake crafting challenge\" and I can wait a long time but I don't want to, let's play soon 👀🍰",
 
-        "Collect ingredients and get new cakes 🎂!",
+        "Our customers are already waiting for their orders, let's hurry up! 🏃🏻‍♂️🏃🏽‍♀️",
 
-        "Collect special ingredients and get a bonus 🤑!"
+        "Just a little more and I can't stand it 😡😡😡😡😡 and eat it all myself!!!",
+
+        "Just a little more and we'll get it all together 🥑🍑🍏🍩 don't quit halfway through"
     };
     
     public async Task Execute(IJobExecutionContext context)
